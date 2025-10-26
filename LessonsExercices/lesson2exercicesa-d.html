@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Chatbot</title>
+    
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      
+     function LoginForm (){
+      return (
+        <div>
+          <p> Hello, welcom to my web site </p>
+          <input placeholder="Email" size="20"/>
+          <br/>
+          <input placeholder="Password" type="password" size="20"/>
+           <br/>
+          <button>Login</button>
+          <button>Sign up</button> 
+          </div>
+      );
+
+     }
+
+      function App () {
+        return (
+        <> 
+          <LoginForm/>
+        </>  
+        );
+      }
+      
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+
+    </script>
+
+  </body>
+</html>
