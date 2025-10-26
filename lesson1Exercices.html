@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Lesson 1 exercices</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      const button =<button>Good job!</button>;
+      const paragraph =<p>Myname is Yahia</p>;
+      const productCost = 10+2*8;
+      const day = dayjs().format('MMMM D');
+      const time1 = dayjs().format('HH:mm:ss');
+      console.log(day);
+      const div3 = (
+        <div>
+          <p>Today is {day}</p>
+          <p>Current time: {time1}</p>
+        </div>
+      ); 
+
+      const div2 =(
+        <div>
+          <p>Product Cost: $ {productCost} </p>
+          <p>Shipping cost: $5</p>
+          <p>Totalcost: $ {productCost + 5}</p>
+          <button>Place your Order</button>
+        </div>
+      );
+
+      const div1 = (
+        <div> 
+          <p>Cotton socks</p>
+          <p>Prices : $10</p>
+          <button>Add to Cart</button>
+        </div>
+      );
+
+      const container = document.querySelector('.js-container');
+      // ReactDOM.createRoot(container).render(div3);
+      const root=ReactDOM.createRoot(container);
+      setInterval(() => {
+        const par2 = <p>Current time: {dayjs().format('HH:mm:ss')}</p>;
+        root.render(par2)}, 1000);
+    </script>
+
+  </body>
+</html>
