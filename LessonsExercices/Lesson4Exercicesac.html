@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Lesson 4 Exercices</title>
+
+    <style>
+
+      .button-on,.button-off{
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .button-on {
+        background-color: rgb(25,135,84);}
+      .button-off {
+        background-color: rgb(220,53,69);}
+    </style>
+
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        function ChangeStateButton (){
+          const [isButtonOn, setIsButtonOn] = React.useState(true);
+          function ChangeButtonState(){
+           setIsButtonOn(!isButtonOn);
+          }
+
+        function ButtonOn (){
+          return (
+            <>
+              <button onClick={ChangeButtonState} className="button-on">ON</button>
+            </>
+          )}
+          
+          function ButtonOff (){
+          return (
+            <>
+                <button onClick={ChangeButtonState} className="button-off">OFF</button>
+            </>
+            )}
+
+            return (
+                    isButtonOn === true ? (<ButtonOn/>) : (<ButtonOff/>)
+            );
+
+
+          }
+
+      function App(){
+
+        return (
+        <>
+        <ChangeStateButton />
+        </>
+      );
+      }
+      
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+
+    </script>
+
+  </body>
+</html>

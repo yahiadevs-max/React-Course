@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Lesson 4 Exercices</title>
+
+    <style>
+      body {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .button-click {
+        background-color: rgb(25,135,84);
+        color: white;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+
+      .counter-container {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(200, 200, 200);
+        align-items: center;
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      function CounterForm (){
+        const [counter, setCounter] = React.useState(0);
+        const bouttonRef= React.useRef();
+ 
+      function IncreaseCounter (){
+        setCounter(counter + 1);
+      }
+      function ResetCounter (){
+        setCounter(0);
+      }
+      function AutoClick(){
+        setInterval(() => {
+          const buttonElem = bouttonRef.current;
+          if (buttonElem) {buttonElem.click();}
+          }, 1000);
+      }
+
+        return (
+          <div className="counter-container">
+            <button onClick={IncreaseCounter} ref={bouttonRef} className="button-click"> Clicked {counter} {counter === 1 ? 'time' : 'times'}</button>
+            <button onClick={ResetCounter} className="button-click">Reset</button>
+            <button onClick={AutoClick} className="button-click">Auto Click</button>
+         </div>
+
+        );
+      }
+  
+
+      function App () {
+
+        return (
+        <> 
+          <CounterForm/>
+        </>  
+        );
+      }
+      
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+
+    </script>
+
+  </body>
+</html>

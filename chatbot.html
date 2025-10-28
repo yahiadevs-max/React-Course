@@ -76,8 +76,12 @@
     flex-direction: column; 
     overflow-y: auto;
     }
-
-
+    /* .chat-messages-container {
+        flex-grow: 1;
+        margin-top: 20px;
+        overflow: scroll;
+        scrollbar-width: none;
+    } */
     .chat-message-contents {
     background-color: rgb(238, 238, 238);
     padding: 15px 20px;
@@ -257,7 +261,7 @@
               <p className="welcome-message">
                 Welcome to the chatbot project! Send a message using the textbox {
                   inputPosition === 'top' ? 'above' : 'below'
-                }.
+                }
               </p>
             ) : (
               messages.map((message) => {
