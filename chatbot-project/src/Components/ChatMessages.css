@@ -1,0 +1,12 @@
+ .chat-messages-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    overflow-y: auto;
+    }
+
+  .welcome-message {
+    color: rgb(120, 120, 120);
+    text-align: center;
+    margin-top: 0;
+    }
