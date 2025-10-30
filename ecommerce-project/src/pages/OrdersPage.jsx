@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import {Header} from '../Components/Header'
-import '../index.css'
+
 import './OrdersPage.css'
 
 export function OrdersPage(){

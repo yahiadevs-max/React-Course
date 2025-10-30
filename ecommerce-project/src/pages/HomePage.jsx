@@ -1,4 +1,5 @@
 import {Header} from '../Components/Header'
+
 import './HomePage.css'
 
 export function HomePage() {
