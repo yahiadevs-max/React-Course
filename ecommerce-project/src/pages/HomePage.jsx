@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Header } from '../Components/Header';
 import CheckmarkIcon from '../assets/images/icons/checkmark.png';
 
@@ -7,12 +8,13 @@ import CheckmarkIcon from '../assets/images/icons/checkmark.png';
 import './HomePage.css'
 
 export function HomePage() {
+    const [products, setProducts] = useState([]);
 
-  axios.get('http://localhost:3000/api/products').then((response) => {
-
-              console.log(response.data);
-              
+    useEffect(() => {
+          axios.get('http://localhost:3000/api/products').then((response) => {
+              setProducts(response.data);   
               });
+            }, []);
 
   return (
     <>
