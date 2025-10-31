@@ -2,12 +2,12 @@ import axios from 'axios';
 import dayjs from 'dayjs'
 import { useEffect, useState, Fragment } from 'react';
 import { Link } from 'react-router';
-import { Header } from '../Components/Header';
+import { Header } from '../../Components/Header';
 
-import BuyAgainIcon from '../assets/images/icons/buy-again.png';
+import BuyAgainIcon from '../../assets/images/icons/buy-again.png';
 
 import './OrdersPage.css'
-import { formatMoney } from '../utils/money';
+import { formatMoney } from '../../utils/money';
 
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
@@ -56,8 +56,7 @@ export function OrdersPage({ cart }) {
 
                   <div className="order-details-grid">
                     {order.products.map((orderProduct) => {
-                      console.log('hello');
-                    console.log(orderProduct);
+
                       return (
                         <Fragment key={orderProduct.product.id}>
                           <div className="product-image-container">
