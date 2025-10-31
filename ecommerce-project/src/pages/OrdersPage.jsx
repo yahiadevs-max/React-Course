@@ -36,9 +36,9 @@ export function OrdersPage({cart}){
               <div>27cba69d-4c3d-4098-b42d-ac7fa62b7664</div>
             </div>
           </div>
-          {cart.map((cart) => {
+          {cart.map((cartItem) => {
           return (
-          <div key={cart.id} className="order-details-grid">
+          <div key={cartItem.productId} className="order-details-grid">
             <div className="product-image-container">
               <img src="images/products/athletic-cotton-socks-6-pairs.jpg" />
             </div>
