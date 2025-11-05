@@ -4,7 +4,8 @@ import { formatMoney } from '../../utils/money';
 export function PaymentSummary({ paymentSummary}) {
 
   const resetCart = async () => {
-    await axios.delete('/api/cart-items');
+    await axios.post('/api/reset').then(console.log('Deleted with config'))
+  .catch(error => console.error('Error:', error));
   };
 
   return (
