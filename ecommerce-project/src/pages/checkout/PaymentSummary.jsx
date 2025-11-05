@@ -1,11 +1,21 @@
 import axios from 'axios';
+import {useNavigate } from 'react-router';
 import { formatMoney } from '../../utils/money';
 
-export function PaymentSummary({ paymentSummary}) {
+export function PaymentSummary({ paymentSummary, loadCart}) {
+ 
+  const navigate = useNavigate();
+
+  const createOrder = async () => {
+    await axios.post('/api/orders');
+    loadCart();
+    navigate('/orders');
+  };
 
   const resetCart = async () => {
-    await axios.post('/api/reset').then(console.log('Deleted with config'))
-  .catch(error => console.error('Error:', error));
+    await axios.post('/api/reset');
+  loadCart();
+  navigate('/');
   };
 
   return (
@@ -45,8 +55,7 @@ export function PaymentSummary({ paymentSummary}) {
             <div className="payment-summary-money">
               {formatMoney(paymentSummary.totalCostCents)}</div>
           </div>
-
-          <button className="place-order-button button-primary">
+          <button className="place-order-button button-primary" onClick={createOrder}>
             Place your order
           </button>
           <button className="place-order-button button-primary" onClick={resetCart}>
