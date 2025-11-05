@@ -1,6 +1,12 @@
+import axios from 'axios';
 import { formatMoney } from '../../utils/money';
 
-export function PaymentSummary({ paymentSummary }) {
+export function PaymentSummary({ paymentSummary}) {
+
+  const resetCart = async () => {
+    await axios.delete('/api/cart-items');
+  };
+
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">
@@ -41,6 +47,9 @@ export function PaymentSummary({ paymentSummary }) {
 
           <button className="place-order-button button-primary">
             Place your order
+          </button>
+          <button className="place-order-button button-primary" onClick={resetCart}>
+            Reset 
           </button>
         </>
       )}
