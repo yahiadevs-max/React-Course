@@ -13,5 +13,9 @@ export default defineConfig({
         target: 'http://localhost:3000'
       }
     }
-  }
+  },
+  test: {
+    globals: true, 
+    // ... other Vitest configuration like environment: 'jsdom' etc.
+  },
 })
