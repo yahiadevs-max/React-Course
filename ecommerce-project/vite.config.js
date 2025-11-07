@@ -14,8 +14,5 @@ export default defineConfig({
       }
     }
   },
-  test: {
-    globals: true, 
-    // ... other Vitest configuration like environment: 'jsdom' etc.
-  },
+  
 })
